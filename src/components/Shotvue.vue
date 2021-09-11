@@ -35,9 +35,8 @@ export default {
     changeDirection: function () {
       this.scoreVal++;
       if (this.scoreVal < this.limitScore) {
-        console.log(this.scoreVal);
-        this.x = Math.random() * 80;
-        this.y = Math.random() * 70;
+        this.x = Math.random() * 95;
+        this.y = Math.random() * 75;
       } else {
         alert("bravo");
       }
@@ -62,14 +61,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .shotWrapper {
-  border: 4px solid black;
-  width: 90vw;
+  border: 4px solid #ED7768;
+  border-radius: 10px;
+  width: 97vw;
   height: 80vh;
   margin: 0 auto;
+  background-color: whitesmoke;
+  cursor: cell;
 }
 .circle {
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 1000000px;
-  background-color: red;
+  background-color: #ED7768;
 }
 </style>
