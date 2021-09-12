@@ -1,16 +1,11 @@
 <template>
-  <div class="bigWrapper" v-if="cross">
+  <div class="bigWrapper" v-if="end">
     <div class="overlay"></div>
     <div class="wrapperModal">
       <div class="modal">
-        <p><strong>Your parameters</strong></p>
+        <p><strong>Bravo votre score est de {{ scoreVal}} </strong></p>
         <label>Circles size </label>
-        <button @click="facile"  type="button">Facile</button>
-        <button @click="normal"  type="button">Normal</button>
-        <button @click="expert"  type="button">Expert</button>
-        <br />
-        <br />
-        <button @click="crossF" class="btn-modal">Start</button>
+        <button type="submit" class="btn-modal">Restart</button>
       </div>
     </div>
   </div>
@@ -18,8 +13,8 @@
 
 <script>
 export default {
-  name: "Modal",
-  props: ["cross", "crossF", "facile", "normal", "expert"],
+  name: "EndModal",
+  props: ["end","scoreVal"],
 };
 </script>
 
