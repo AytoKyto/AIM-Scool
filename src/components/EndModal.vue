@@ -4,7 +4,7 @@
     <div class="wrapperModal">
       <div class="modal">
         <p><strong>Bravo votre score est de {{ scoreVal}} </strong></p>
-        <label>Circles size </label>
+        <p>Pésision : {{ clickVal}} pour {{ scoreVal}} hit !</p>
         <button type="submit" class="btn-modal">Restart</button>
       </div>
     </div>
@@ -14,7 +14,7 @@
 <script>
 export default {
   name: "EndModal",
-  props: ["end","scoreVal"],
+  props: ["end","scoreVal","clickVal"],
 };
 </script>
 

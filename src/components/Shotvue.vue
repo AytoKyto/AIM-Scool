@@ -10,11 +10,13 @@
     <EndModal 
     :end="end"
     :scoreVal="scoreVal"
+    :clickVal="clickVal"
     />
-    <div class="shotWrapper">
+    <div class="shotWrapper" @click="clickF">
       <div :style="styleCirlce" @click="changeDirection" class="circle"></div>
     </div>
     <p class="score">Votre score et de {{ scoreVal }}</p>
+    <p class="score">Nombre de click {{ clickVal }}</p>
     <circular-count-down-timer
       v-if="timer"
       :initial-value="10"
@@ -39,6 +41,7 @@ export default {
   data() {
     return {
       scoreVal: 0,
+      clickVal: 0,
       limitScore: 25,
       x: 0,
       y: 0,
@@ -61,6 +64,9 @@ export default {
     crossF: function () {
       this.timer = !this.timer;
       this.cross = !this.cross;
+    },
+    clickF: function () {
+      this.clickVal++;
     },
     facile: function () {
       this.large = 30;
