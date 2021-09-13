@@ -7,7 +7,7 @@
         <p>Pésision : {{ clickVal}} clique pour {{ scoreVal}} hit !</p>
         <p>Présition à {{scoreVal / clickVal * 100}}%</p>
         <form>
-        <button type="submit" @click="window.location.reload();" class="btn-modal">Restart</button>
+        <button type="submit" @click="window.location.reload();" class="btn-default">Restart</button>
         </form>
       </div>
     </div>
@@ -34,6 +34,7 @@ export default {
   width: 50vw;
   padding: 2vw;
   z-index: 999;
+  border-radius:10px;
   background-color: white;
 }
 .overlay {

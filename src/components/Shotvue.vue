@@ -116,7 +116,7 @@ export default {
   width: 97vw;
   height: 80vh;
   margin: 0 auto;
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0.61);
   cursor: cell;
   margin-bottom: 5vh;
 }

@@ -25,7 +25,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: whitesmoke;
+  background-image: url(./assets/bg.svg);
+  background-position: center;
+  background-size: cover;
   margin: 0;
 }
 </style>
