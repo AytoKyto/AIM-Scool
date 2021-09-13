@@ -3,13 +3,14 @@
     <div class="overlay"></div>
     <div class="wrapperModal">
       <div class="modal">
-        <p><strong>Your parameters</strong></p>
-        <label>Circles size </label>
+        <p><strong>Paramètres</strong></p>
+        <label>Taille du cercle </label>
         <button @click="facile" class="btn btn-primary" type="button">Facile</button>
         <button @click="normal" class="btn btn-primary" type="button">Normal</button>
         <button @click="expert" class="btn btn-primary" type="button">Expert</button>
         <br />
         <br />
+        <p>C'est partie pour 30 secondes</p>
         <button @click="crossF" class="btn btn-default">Start</button>
       </div>
     </div>
@@ -45,8 +46,8 @@ export default {
 </style>
 <style>
 .btn {
-  border: 1px solid #ed7768;
-  color:#ed7768;
+  border: 1px solid #70D3BF;
+  color:#70D3BF;
   padding: 5px;
   border-radius: 1000000px;
   background-color:white;
@@ -56,15 +57,15 @@ export default {
 }
 .btn-default{
   color:white;
-  background-color:#ed7768;
+  background-color:#70D3BF;
 }
 
 .btn:hover{
   color:white;
-  background-color:#ed7768;
+  background-color:#70D3BF;
 }
 .btn-default:hover{
-  color:#ed7768;
+  color:#70D3BF;
   background-color:white;
 }
 </style>

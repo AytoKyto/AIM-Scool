@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <HelloWorld msg="AIM Test"/>
     <Shotvue/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import Shotvue from './components/Shotvue.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    Shotvue
+    Shotvue,
   }
 }
 </script>
@@ -25,7 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-image: url(./assets/bg.svg);
+  background-image: url(./assets/wall.svg);
   background-position: center;
   background-size: cover;
   margin: 0;

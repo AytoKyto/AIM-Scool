@@ -19,6 +19,8 @@ export default {
 .header {
   display: flex;
   justify-content: center;
+  color: white;
+  padding-left: 4.5vw;
 }
 .logo {
   width: 5vw;
