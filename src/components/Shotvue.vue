@@ -14,7 +14,7 @@
       <circular-count-down-timer
         v-if="timer"
         :initial-value="30"
-        :steps="400"
+        :steps="30"
         :size="80"
         @finish="finished"
         @update="updated"
@@ -61,7 +61,7 @@ export default {
       difficulty: "Normal",
       scoreVal: 0,
       clickVal: 0,
-      limitScore: 25,
+      limitScore: 999999,
       x: 0,
       y: 0,
       large: 20,

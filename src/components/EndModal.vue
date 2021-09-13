@@ -5,7 +5,7 @@
       <div class="modal">
         <p><strong>Bravo votre score est de {{ scoreVal}} en mode {{difficulty}} </strong></p>
         <p>Pésision : {{ clickVal}} clique pour {{ scoreVal}} hit !</p>
-        <p>Présition à {{scoreVal / clickVal * 100}}%</p>
+        <p>Taux de réussite {{scoreVal / clickVal * 100}}%</p>
         <form>
         <button type="submit" @click="window.location.reload();" class="btn btn-default">Restart</button>
         </form>
@@ -36,13 +36,17 @@ export default {
   z-index: 999;
   border-radius:10px;
   background-color: white;
+  color: black;
 }
 .overlay {
-  background-color: rgba(0, 0, 0, 0.769);
+  background-image: url(../assets/blurr.png);
+  background-position: top center;
+  background-size: cover;
   position: fixed;
   top: 0;
   z-index: 1;
-  width: 100vw;
-  height: 100vh;
+  width: 102vw;
+  height: 103vh;
+  margin: -15px;
 }
 </style>

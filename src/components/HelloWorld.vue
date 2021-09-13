@@ -23,7 +23,7 @@ export default {
   padding-left: 4.5vw;
 }
 .logo {
-  width: 5vw;
+  width: 3.5vw;
   margin-right: 1vw;
 }
 </style>
