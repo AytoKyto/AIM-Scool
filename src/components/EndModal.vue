@@ -3,9 +3,12 @@
     <div class="overlay"></div>
     <div class="wrapperModal">
       <div class="modal">
-        <p><strong>Bravo votre score est de {{ scoreVal}} </strong></p>
-        <p>Pésision : {{ clickVal}} pour {{ scoreVal}} hit !</p>
-        <button type="submit" class="btn-modal">Restart</button>
+        <p><strong>Bravo votre score est de {{ scoreVal}} en mode {{difficulty}} </strong></p>
+        <p>Pésision : {{ clickVal}} clique pour {{ scoreVal}} hit !</p>
+        <p>Présition à {{scoreVal / clickVal * 100}}%</p>
+        <form>
+        <button type="submit" @click="window.location.reload();" class="btn-modal">Restart</button>
+        </form>
       </div>
     </div>
   </div>
@@ -14,7 +17,12 @@
 <script>
 export default {
   name: "EndModal",
-  props: ["end","scoreVal","clickVal"],
+  props: ["end","scoreVal","clickVal","difficulty"],
+  data() {
+    return {
+      result: 0,
+    };
+  },
 };
 </script>
 

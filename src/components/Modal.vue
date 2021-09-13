@@ -19,7 +19,7 @@
 <script>
 export default {
   name: "Modal",
-  props: ["cross", "crossF", "facile", "normal", "expert"],
+  props: ["cross", "crossF", "facile", "normal", "expert","difficulty"],
 };
 </script>
 

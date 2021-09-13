@@ -1,6 +1,20 @@
 <template>
   <div class="wrapper">
+    <div class="containerData">
+<p class="score">Votre score et de {{ scoreVal }}</p>
+    <p class="score">Nombre de click {{ clickVal }}</p>
+    <circular-count-down-timer
+      v-if="timer"
+      :initial-value="10"
+      :steps="400"
+      :size="150"
+      @finish="finished"
+      @update="updated"
+    ></circular-count-down-timer>
+    </div>
+    <p class="score">Mode {{ difficulty }}</p>
     <Modal
+      :difficulty="difficulty"
       :cross="cross"
       :crossF="crossF"
       :facile="facile"
@@ -11,20 +25,12 @@
     :end="end"
     :scoreVal="scoreVal"
     :clickVal="clickVal"
+    :difficulty="difficulty"
     />
     <div class="shotWrapper" @click="clickF">
       <div :style="styleCirlce" @click="changeDirection" class="circle"></div>
     </div>
-    <p class="score">Votre score et de {{ scoreVal }}</p>
-    <p class="score">Nombre de click {{ clickVal }}</p>
-    <circular-count-down-timer
-      v-if="timer"
-      :initial-value="10"
-      :steps="400"
-      :size="150"
-      @finish="finished"
-      @update="updated"
-    ></circular-count-down-timer>
+    
   </div>
 </template>
 
@@ -40,6 +46,7 @@ export default {
   },
   data() {
     return {
+      difficulty: 'Normal',
       scoreVal: 0,
       clickVal: 0,
       limitScore: 25,
@@ -70,12 +77,15 @@ export default {
     },
     facile: function () {
       this.large = 30;
+      this.difficulty = 'Facile'
     },
     normal: function () {
       this.large = 20;
+      this.difficulty = 'Normal'
     },
     expert: function () {
       this.large = 10;
+      this.difficulty = 'Expert'
     },
     finished: function () {
       console.log("finished");
@@ -108,10 +118,15 @@ export default {
   margin: 0 auto;
   background-color: whitesmoke;
   cursor: cell;
+  margin-bottom: 5vh;
 }
 .circle {
   border: 1px solid white;
   border-radius: 1000000px;
   background-color: #ed7768;
+}
+.containerData {
+  display: flex;
+  justify-content: center;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to AIM Scool"/>
+    <HelloWorld msg="AIM Test"/>
     <Shotvue/>
   </div>
 </template>
