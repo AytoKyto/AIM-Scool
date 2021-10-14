@@ -2,27 +2,33 @@
   <div class="wrapper">
     <div class="containerData">
       <div class="dataWrapper">
-      <p class="score"><span class="color">{{ scoreVal }}</span><br/>HIT</p>
+        <p class="score">
+          <span class="color">{{ scoreVal }}</span
+          ><br />HIT
+        </p>
       </div>
       <div class="dataWrapper">
-      <p class="score"><span class="color">{{ clickVal }}</span><br/>CLICK</p>
+        <p class="score">
+          <span class="color">{{ clickVal }}</span
+          ><br />CLICK
+        </p>
       </div>
       <div class="diffWrapper">
-      <p class="score"><span class="color">{{ difficulty }}</span><br/>DIFFICULE</p>
+        <p class="score">
+          <span class="color">{{ difficulty }}</span
+          ><br />DIFFICULE
+        </p>
       </div>
       <div class="chronoWrapper">
-      <circular-count-down-timer
-        v-if="timer"
-        :initial-value="30"
-        :steps="30"
-        :size="80"
-        @finish="finished"
-        @update="updated"
-      ></circular-count-down-timer>
-    </div>
-      <div class="nameWrapper">
-    <HelloWorld msg="AIM TEST"/>
-    </div>
+        <circular-count-down-timer
+          v-if="timer"
+          :initial-value="30"
+          :steps="30"
+          :size="80"
+          @finish="finished"
+        ></circular-count-down-timer>
+      </div>
+      <div class="nameWrapper"></div>
     </div>
     <Modal
       :difficulty="difficulty"
@@ -47,14 +53,13 @@
 <script>
 import Modal from "./Modal.vue";
 import EndModal from "./EndModal.vue";
-import HelloWorld from "./HelloWorld.vue";
+import { gsap } from "gsap";
 
 export default {
   name: "Shotvue",
   components: {
     Modal,
     EndModal,
-    HelloWorld,
   },
   data() {
     return {
@@ -68,17 +73,22 @@ export default {
       cross: true,
       timer: false,
       end: false,
+      truc: this,
     };
   },
   methods: {
-    changeDirection: function () {
+    logic: function () {
       this.scoreVal++;
       if (this.scoreVal < this.limitScore) {
         this.x = Math.random() * 95;
         this.y = Math.random() * 75;
       } else {
-        alert("bravo");
+        alert("error");
       }
+    },
+    changeDirection: function () {
+      console.log(this.scoreVal);
+      gsap.to(".circle", { scale: 2, duration:31, onComplete: this.logic() });
     },
     crossF: function () {
       this.timer = !this.timer;
@@ -102,9 +112,6 @@ export default {
     finished: function () {
       console.log("finished");
       this.end = !this.end;
-    },
-    updated: function (status) {
-      console.log(status.value); //{"value": 144, "seconds": 24, "minutes": 2, "hours": 0}
     },
   },
   computed: {
