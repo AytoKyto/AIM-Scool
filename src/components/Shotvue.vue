@@ -77,6 +77,15 @@ export default {
     };
   },
   methods: {
+    
+    changeDirection: function () {
+      console.log(this.scoreVal);
+      gsap.fromTo(
+        ".circle",
+       { scale: 0, duration: 0.3, borderColor: "white", backgroundColor: "#70d3bf" },
+        { scale: 1, duration: 0.25,backgroundColor: "transparent" , onComplete: () => this.logic() }
+      );
+    },
     logic: function () {
       this.scoreVal++;
       if (this.scoreVal < this.limitScore) {
@@ -85,10 +94,6 @@ export default {
       } else {
         alert("error");
       }
-    },
-    changeDirection: function () {
-      console.log(this.scoreVal);
-      gsap.fromTo(".circle", { scale: 0, duration:0.3},{ scale: 1, duration:0.3, onComplete: this.logic() });
     },
     crossF: function () {
       this.timer = !this.timer;
@@ -140,6 +145,7 @@ export default {
 .circle {
   border-radius: 1000000px;
   background-color: #70d3bf;
+  border: 1px solid #70d3bf;
 }
 .containerData {
   display: flex;
