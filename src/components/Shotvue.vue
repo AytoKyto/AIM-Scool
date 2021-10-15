@@ -88,7 +88,7 @@ export default {
     },
     changeDirection: function () {
       console.log(this.scoreVal);
-      gsap.to(".circle", { scale: 2, duration:31, onComplete: this.logic() });
+      gsap.fromTo(".circle", { scale: 0, duration:0.3},{ scale: 1, duration:0.3, onComplete: this.logic() });
     },
     crossF: function () {
       this.timer = !this.timer;
